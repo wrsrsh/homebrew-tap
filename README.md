@@ -9,8 +9,9 @@ Code and Claude subagents from Codex, while the client keeps control of tools.
 brew install wrsrsh/tap/arelay && arelay install
 ```
 
-`arelay install` starts and enables the background login service. Configure API
-credentials and opt clients in with `arelay setup claude` or `arelay setup codex`.
+`arelay install` opens the terminal setup wizard. Choose providers, model versions,
+credentials, and routing, then confirm before saving or enabling the login service.
+Run `arelay setup` to change it later. For scripts, use `arelay install --no-interactive`.
 See the [project README](https://github.com/wrsrsh/arelay#readme) for compatibility
 trade-offs and setup instructions.
 
