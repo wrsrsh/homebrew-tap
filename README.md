@@ -9,13 +9,10 @@ each other's installed CLI, using existing logins and native tools.
 brew install wrsrsh/tap/arelay && arelay install
 ```
 
-`arelay install` opens the minimal setup: choose a direction, then connect.
-Keep your working Codex provider (including Azure) and Claude Code login.
-For subscription sign-in, use the original `codex login` / `claude auth login` commands.
-API keys and Azure are optional under `arelay setup --api`.
-For scripts, use `arelay install --no-interactive`.
-See the [project README](https://github.com/wrsrsh/arelay#readme) for compatibility
-trade-offs and setup instructions.
+Choose a direction to connect and start at login, then restart your clients.
+Your existing CLI authentication and providers stay in place. For unattended
+installation, use `arelay install --no-interactive`.
+See the [project README](https://github.com/wrsrsh/arelay#readme) for usage and advanced setup.
 
 Before removal:
 
