@@ -1,5 +1,20 @@
 # Waris's Homebrew tap
 
+## tns
+
+[tns](https://github.com/wrsrsh/tns) is a predictive terminal for a remote
+fish shell: it paints fish's full redraw (autosuggestion, colours) for each
+keystroke before the round trip, over ssh or mosh.
+
+```sh
+brew install wrsrsh/tap/tns
+tns HOST            # or: tns --mosh HOST
+```
+
+The remote host needs fish; for `--mosh` also mosh, see the
+[mosh setup notes](https://github.com/wrsrsh/tns#setting-up-mosh).
+The formula builds from the checksum-verified release tarball.
+
 ## arelay
 
 [arelay](https://github.com/wrsrsh/arelay) lets Claude Code and Codex delegate to
