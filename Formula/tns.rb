@@ -1,8 +1,8 @@
 class Tns < Formula
   desc "Predictive terminal for a remote fish shell, over ssh or mosh"
   homepage "https://github.com/wrsrsh/tns"
-  url "https://github.com/wrsrsh/tns/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "7b765f8ecc4022a40745d2491136ab2ef31c8a6b534e02cc32816249a9e667e8"
+  url "https://github.com/wrsrsh/tns/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "011834d2574ddbff55234a6c028d0c565eb7301e6143901b2598e790fcb3a1ab"
   license "MIT"
   head "https://github.com/wrsrsh/tns.git", branch: "main"
 
