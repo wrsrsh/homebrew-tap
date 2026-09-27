@@ -1,13 +1,13 @@
 class Tns < Formula
   desc "Predictive terminal for a remote fish shell, over ssh or mosh"
   homepage "https://github.com/wrsrsh/tns"
-  url "https://github.com/wrsrsh/tns/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "011834d2574ddbff55234a6c028d0c565eb7301e6143901b2598e790fcb3a1ab"
+  url "https://github.com/wrsrsh/tns/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "9efe81395dfcb0a41001bd20f13ee835de9493ecb96f0181f099f3eae1172a45"
   license "MIT"
   head "https://github.com/wrsrsh/tns.git", branch: "main"
 
   depends_on "rust" => :build
-  depends_on "mosh" => :recommended
+  depends_on "mosh"
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -15,9 +15,11 @@ class Tns < Formula
 
   def caveats
     <<~EOS
-      The remote host needs fish installed (any login shell is fine).
-      For `tns --mosh HOST`, install mosh on the remote too and allow UDP
-      60000-61000 inbound; see https://github.com/wrsrsh/tns#setting-up-mosh
+      Get started:  tns setup
+      The remote host needs a shell (bash, zsh, fish, or any) and, for the
+      default mosh transport, mosh. `tns setup` installs mosh on the remote and
+      helps set up an ssh key. Allow UDP 60000-61000 inbound on the server, or
+      use a tunnel like Tailscale; see https://github.com/wrsrsh/tns#setting-up-mosh
     EOS
   end
 
