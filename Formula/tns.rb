@@ -1,8 +1,8 @@
 class Tns < Formula
-  desc "Predictive terminal for a remote fish shell, over ssh or mosh"
+  desc "Remote terminal with local typing prediction over SSH or mosh"
   homepage "https://github.com/wrsrsh/tns"
-  url "https://github.com/wrsrsh/tns/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "c49bd2c496cebdab668abed0f29525a7fce6503b8a29bf6e88aca96f9813b66b"
+  url "https://github.com/wrsrsh/tns/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "d6635e3a2961a92d684e4b980135f04e9ed228bd2d94e4773d1c4e30308d392e"
   license "MIT"
   head "https://github.com/wrsrsh/tns.git", branch: "main"
 
@@ -15,13 +15,17 @@ class Tns < Formula
 
   def caveats
     <<~EOS
-      Get started:  tns setup
+      Check this computer: tns setup --local
+      Check both machines: tns setup user@server
+      Setup checks are read-only; they print instructions without installing
+      packages or changing SSH configuration. Install mosh on the remote host
+      separately and allow UDP 60000-61000, or use `tns --ssh HOST`.
       Run `claude` inside a normal `tns HOST` session for local typing previews
       in Claude's original TUI. No `tns agent` command is required.
-      The remote host needs a shell (bash, zsh, fish, or any) and, for the
-      default mosh transport, mosh. `tns setup` installs mosh on the remote and
-      helps set up an ssh key. Allow UDP 60000-61000 inbound on the server, or
-      use a tunnel like Tailscale; see https://github.com/wrsrsh/tns#setting-up-mosh
+      Optional Pi agent interface: install Pi and run
+        pi install git:github.com/wrsrsh/tns
+      Then use `tns agent claude HOST` or `tns agent codex HOST`.
+      Setup guide: https://github.com/wrsrsh/tns/blob/main/docs/setup.md
     EOS
   end
 
